@@ -1,13 +1,16 @@
 //
 //  MasterViewController.m
-//  rate test
+//  Scary Bosses
 //
-//  Created by iD Student on 7/12/12.
+//  Created by Daniel Wood on 7/11/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "MasterViewController.h"
-
+#import "DetailViewController.h"
+#import "ScaryBossDoc.h"
+#import "ScaryBossData.h"
+//NEW//
 #import "DetailViewController.h"
 
 @interface MasterViewController () {
@@ -16,15 +19,10 @@
 @end
 
 @implementation MasterViewController
-
-@synthesize detailViewController = _detailViewController;
+@synthesize boss = _boss;
 
 - (void)awakeFromNib
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        self.clearsSelectionOnViewWillAppear = NO;
-        self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
-    }
     [super awakeFromNib];
 }
 
@@ -33,10 +31,12 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
-
+    
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
-    self.detailViewController = (DetailViewController *)[[self.splitViewController.viewControllers lastObject] topViewController];
+    
+    //WHAT YOU HAVE TO CHANGE
+    self.title = @"Scary Bosses";
 }
 
 - (void)viewDidUnload
@@ -47,11 +47,7 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+    return YES;
 }
 
 - (void)insertNewObject:(id)sender
@@ -73,15 +69,17 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return _objects.count;
+    return _boss.count;
 }
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+- (UITableViewCell *)tableView:(UITableView *)tableView 
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
-    NSDate *object = [_objects objectAtIndex:indexPath.row];
-    cell.textLabel.text = [object description];
+    UITableViewCell *cell = [tableView
+                             dequeueReusableCellWithIdentifier:@"MyBasicCell"];
+    ScaryBossDoc *boss = [self.boss objectAtIndex:indexPath.row];
+    cell.textLabel.text = boss.data.title;
+    cell.imageView.image = boss.thumbImage;
     return cell;
 }
 
@@ -102,36 +100,26 @@
 }
 
 /*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
+ // Override to support rearranging the table view.
+ - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
+ {
+ }
+ */
 
 /*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        self.detailViewController.detailItem = object;
-    }
-}
+ // Override to support conditional rearranging of the table view.
+ - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
+ {
+ // Return NO if you do not want the item to be re-orderable.
+ return YES;
+ }
+ */
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+    DetailViewController *detailController =segue.destinationViewController;
+    ScaryBossDoc *boss = [self.boss objectAtIndex:self.tableView.indexPathForSelectedRow.row];
+    detailController.detailItem = boss;
 }
 
 @end

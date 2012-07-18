@@ -22,6 +22,23 @@
 		3F592CF215AF1E0000008DA8 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3F592CCD15AF1E0000008DA8 /* Foundation.framework */; };
 		3F592CFA15AF1E0000008DA8 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3F592CF815AF1E0000008DA8 /* InfoPlist.strings */; };
 		3F592CFD15AF1E0000008DA8 /* rate_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592CFC15AF1E0000008DA8 /* rate_testTests.m */; };
+		3F592D0815AF1E2000008DA8 /* ScaryBossData.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D0715AF1E2000008DA8 /* ScaryBossData.m */; };
+		3F592D0B15AF1E3400008DA8 /* ScaryBossDoc.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D0A15AF1E3400008DA8 /* ScaryBossDoc.m */; };
+		3F592D0E15AF1E6B00008DA8 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D0D15AF1E6B00008DA8 /* RateView.m */; };
+		3F592D1115AF1E7400008DA8 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D1015AF1E7400008DA8 /* UIImageExtras.m */; };
+		3F592D1215AF1E8200008DA8 /* UIImageExtras.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D1015AF1E7400008DA8 /* UIImageExtras.m */; };
+		3F592D1315AF1E8900008DA8 /* RateView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3F592D0D15AF1E6B00008DA8 /* RateView.m */; };
+		3F592D1C15AF1FB800008DA8 /* Bowser.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1515AF1FB800008DA8 /* Bowser.jpg */; };
+		3F592D1D15AF1FB800008DA8 /* BowserThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1615AF1FB800008DA8 /* BowserThumb.jpg */; };
+		3F592D1E15AF1FB800008DA8 /* Mecha Hitler.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1715AF1FB800008DA8 /* Mecha Hitler.jpg */; };
+		3F592D1F15AF1FB800008DA8 /* Mecha HitlerThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1815AF1FB800008DA8 /* Mecha HitlerThumb.jpg */; };
+		3F592D2015AF1FB800008DA8 /* shockedface2_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1915AF1FB800008DA8 /* shockedface2_empty.png */; };
+		3F592D2115AF1FB800008DA8 /* shockedface2_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1A15AF1FB800008DA8 /* shockedface2_full.png */; };
+		3F592D2215AF1FB800008DA8 /* shockedface2_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D1B15AF1FB800008DA8 /* shockedface2_half.png */; };
+		3F592D2715AF1FC000008DA8 /* Robotnik.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D2315AF1FC000008DA8 /* Robotnik.png */; };
+		3F592D2815AF1FC000008DA8 /* RobotnikThumb.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D2415AF1FC000008DA8 /* RobotnikThumb.png */; };
+		3F592D2915AF1FC000008DA8 /* Sephiroth.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D2515AF1FC000008DA8 /* Sephiroth.jpg */; };
+		3F592D2A15AF1FC000008DA8 /* SephirothThumb.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3F592D2615AF1FC000008DA8 /* SephirothThumb.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,24 +56,43 @@
 		3F592CCB15AF1E0000008DA8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3F592CCD15AF1E0000008DA8 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		3F592CCF15AF1E0000008DA8 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		3F592CD315AF1E0000008DA8 /* rate test-Info.plist */ = {isa = PBXFileReference; path = "rate test-Info.plist"; sourceTree = "<group>"; };
+		3F592CD315AF1E0000008DA8 /* rate test-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rate test-Info.plist"; sourceTree = "<group>"; };
 		3F592CD515AF1E0000008DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3F592CD715AF1E0000008DA8 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3F592CD915AF1E0000008DA8 /* rate test-Prefix.pch */ = {isa = PBXFileReference; path = "rate test-Prefix.pch"; sourceTree = "<group>"; };
-		3F592CDA15AF1E0000008DA8 /* AppDelegate.h */ = {isa = PBXFileReference; path = AppDelegate.h; sourceTree = "<group>"; };
+		3F592CD915AF1E0000008DA8 /* rate test-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "rate test-Prefix.pch"; sourceTree = "<group>"; };
+		3F592CDA15AF1E0000008DA8 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		3F592CDB15AF1E0000008DA8 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		3F592CDE15AF1E0000008DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		3F592CE115AF1E0000008DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		3F592CE315AF1E0000008DA8 /* MasterViewController.h */ = {isa = PBXFileReference; path = MasterViewController.h; sourceTree = "<group>"; };
+		3F592CE315AF1E0000008DA8 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
 		3F592CE415AF1E0000008DA8 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
-		3F592CE615AF1E0000008DA8 /* DetailViewController.h */ = {isa = PBXFileReference; path = DetailViewController.h; sourceTree = "<group>"; };
+		3F592CE615AF1E0000008DA8 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		3F592CE715AF1E0000008DA8 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		3F592CEE15AF1E0000008DA8 /* rate testTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "rate testTests.octest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F592CEF15AF1E0000008DA8 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
-		3F592CF715AF1E0000008DA8 /* rate testTests-Info.plist */ = {isa = PBXFileReference; path = "rate testTests-Info.plist"; sourceTree = "<group>"; };
+		3F592CF715AF1E0000008DA8 /* rate testTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "rate testTests-Info.plist"; sourceTree = "<group>"; };
 		3F592CF915AF1E0000008DA8 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		3F592CFB15AF1E0000008DA8 /* rate_testTests.h */ = {isa = PBXFileReference; path = rate_testTests.h; sourceTree = "<group>"; };
+		3F592CFB15AF1E0000008DA8 /* rate_testTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = rate_testTests.h; sourceTree = "<group>"; };
 		3F592CFC15AF1E0000008DA8 /* rate_testTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = rate_testTests.m; sourceTree = "<group>"; };
+		3F592D0615AF1E2000008DA8 /* ScaryBossData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaryBossData.h; sourceTree = "<group>"; };
+		3F592D0715AF1E2000008DA8 /* ScaryBossData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaryBossData.m; sourceTree = "<group>"; };
+		3F592D0915AF1E3400008DA8 /* ScaryBossDoc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaryBossDoc.h; sourceTree = "<group>"; };
+		3F592D0A15AF1E3400008DA8 /* ScaryBossDoc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaryBossDoc.m; sourceTree = "<group>"; };
+		3F592D0C15AF1E6B00008DA8 /* RateView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RateView.h; sourceTree = "<group>"; };
+		3F592D0D15AF1E6B00008DA8 /* RateView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RateView.m; sourceTree = "<group>"; };
+		3F592D0F15AF1E7400008DA8 /* UIImageExtras.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageExtras.h; sourceTree = "<group>"; };
+		3F592D1015AF1E7400008DA8 /* UIImageExtras.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageExtras.m; sourceTree = "<group>"; };
+		3F592D1515AF1FB800008DA8 /* Bowser.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Bowser.jpg; sourceTree = "<group>"; };
+		3F592D1615AF1FB800008DA8 /* BowserThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = BowserThumb.jpg; sourceTree = "<group>"; };
+		3F592D1715AF1FB800008DA8 /* Mecha Hitler.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mecha Hitler.jpg"; sourceTree = "<group>"; };
+		3F592D1815AF1FB800008DA8 /* Mecha HitlerThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Mecha HitlerThumb.jpg"; sourceTree = "<group>"; };
+		3F592D1915AF1FB800008DA8 /* shockedface2_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_empty.png; sourceTree = "<group>"; };
+		3F592D1A15AF1FB800008DA8 /* shockedface2_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_full.png; sourceTree = "<group>"; };
+		3F592D1B15AF1FB800008DA8 /* shockedface2_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_half.png; sourceTree = "<group>"; };
+		3F592D2315AF1FC000008DA8 /* Robotnik.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Robotnik.png; sourceTree = "<group>"; };
+		3F592D2415AF1FC000008DA8 /* RobotnikThumb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RobotnikThumb.png; sourceTree = "<group>"; };
+		3F592D2515AF1FC000008DA8 /* Sephiroth.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Sephiroth.jpg; sourceTree = "<group>"; };
+		3F592D2615AF1FC000008DA8 /* SephirothThumb.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = SephirothThumb.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +122,23 @@
 		3F592CBC15AF1E0000008DA8 = {
 			isa = PBXGroup;
 			children = (
+				3F592D0615AF1E2000008DA8 /* ScaryBossData.h */,
+				3F592D0715AF1E2000008DA8 /* ScaryBossData.m */,
+				3F592D1515AF1FB800008DA8 /* Bowser.jpg */,
+				3F592D1615AF1FB800008DA8 /* BowserThumb.jpg */,
+				3F592D1715AF1FB800008DA8 /* Mecha Hitler.jpg */,
+				3F592D1815AF1FB800008DA8 /* Mecha HitlerThumb.jpg */,
+				3F592D1915AF1FB800008DA8 /* shockedface2_empty.png */,
+				3F592D2315AF1FC000008DA8 /* Robotnik.png */,
+				3F592D2415AF1FC000008DA8 /* RobotnikThumb.png */,
+				3F592D2515AF1FC000008DA8 /* Sephiroth.jpg */,
+				3F592D2615AF1FC000008DA8 /* SephirothThumb.jpg */,
+				3F592D1A15AF1FB800008DA8 /* shockedface2_full.png */,
+				3F592D1B15AF1FB800008DA8 /* shockedface2_half.png */,
+				3F592D0915AF1E3400008DA8 /* ScaryBossDoc.h */,
+				3F592D0A15AF1E3400008DA8 /* ScaryBossDoc.m */,
+				3F592D0F15AF1E7400008DA8 /* UIImageExtras.h */,
+				3F592D1015AF1E7400008DA8 /* UIImageExtras.m */,
 				3F592CD115AF1E0000008DA8 /* rate test */,
 				3F592CF515AF1E0000008DA8 /* rate testTests */,
 				3F592CCA15AF1E0000008DA8 /* Frameworks */,
@@ -119,6 +172,8 @@
 				3F592CDA15AF1E0000008DA8 /* AppDelegate.h */,
 				3F592CDB15AF1E0000008DA8 /* AppDelegate.m */,
 				3F592CDD15AF1E0000008DA8 /* MainStoryboard_iPhone.storyboard */,
+				3F592D0C15AF1E6B00008DA8 /* RateView.h */,
+				3F592D0D15AF1E6B00008DA8 /* RateView.m */,
 				3F592CE015AF1E0000008DA8 /* MainStoryboard_iPad.storyboard */,
 				3F592CE315AF1E0000008DA8 /* MasterViewController.h */,
 				3F592CE415AF1E0000008DA8 /* MasterViewController.m */,
@@ -240,6 +295,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F592CFA15AF1E0000008DA8 /* InfoPlist.strings in Resources */,
+				3F592D1C15AF1FB800008DA8 /* Bowser.jpg in Resources */,
+				3F592D1D15AF1FB800008DA8 /* BowserThumb.jpg in Resources */,
+				3F592D1E15AF1FB800008DA8 /* Mecha Hitler.jpg in Resources */,
+				3F592D1F15AF1FB800008DA8 /* Mecha HitlerThumb.jpg in Resources */,
+				3F592D2015AF1FB800008DA8 /* shockedface2_empty.png in Resources */,
+				3F592D2115AF1FB800008DA8 /* shockedface2_full.png in Resources */,
+				3F592D2215AF1FB800008DA8 /* shockedface2_half.png in Resources */,
+				3F592D2715AF1FC000008DA8 /* Robotnik.png in Resources */,
+				3F592D2815AF1FC000008DA8 /* RobotnikThumb.png in Resources */,
+				3F592D2915AF1FC000008DA8 /* Sephiroth.jpg in Resources */,
+				3F592D2A15AF1FC000008DA8 /* SephirothThumb.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,10 +332,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3F592D1315AF1E8900008DA8 /* RateView.m in Sources */,
+				3F592D1215AF1E8200008DA8 /* UIImageExtras.m in Sources */,
 				3F592CD815AF1E0000008DA8 /* main.m in Sources */,
 				3F592CDC15AF1E0000008DA8 /* AppDelegate.m in Sources */,
 				3F592CE515AF1E0000008DA8 /* MasterViewController.m in Sources */,
 				3F592CE815AF1E0000008DA8 /* DetailViewController.m in Sources */,
+				3F592D0815AF1E2000008DA8 /* ScaryBossData.m in Sources */,
+				3F592D0B15AF1E3400008DA8 /* ScaryBossDoc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,6 +348,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F592CFD15AF1E0000008DA8 /* rate_testTests.m in Sources */,
+				3F592D0E15AF1E6B00008DA8 /* RateView.m in Sources */,
+				3F592D1115AF1E7400008DA8 /* UIImageExtras.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

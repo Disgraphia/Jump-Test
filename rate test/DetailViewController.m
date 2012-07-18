@@ -1,15 +1,17 @@
 //
 //  DetailViewController.m
-//  rate test
+//  Scary Bosses
 //
-//  Created by iD Student on 7/12/12.
+//  Created by Daniel Wood on 7/11/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import "DetailViewController.h"
+#import "ScaryBossDoc.h"
+#import "ScaryBossData.h"
+#import "UIImageExtras.h"
 
 @interface DetailViewController ()
-@property (strong, nonatomic) UIPopoverController *masterPopoverController;
 - (void)configureView;
 @end
 
@@ -17,7 +19,11 @@
 
 @synthesize detailItem = _detailItem;
 @synthesize detailDescriptionLabel = _detailDescriptionLabel;
-@synthesize masterPopoverController = _masterPopoverController;
+@synthesize titleField = _titleField;
+@synthesize rateView = _rateView;
+@synthesize imageView = _imageView;
+//New//
+@synthesize picker = _picker;
 
 #pragma mark - Managing the detail item
 
@@ -29,18 +35,21 @@
         // Update the view.
         [self configureView];
     }
-
-    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-    }        
 }
 
 - (void)configureView
 {
-    // Update the user interface for the detail item.
-
+    self.rateView.notSelectedImage = [UIImage imageNamed:@"shockedface2_empty.png"];
+    self.rateView.halfSelectedImage = [UIImage imageNamed:@"shockedface2_half.png"];
+    self.rateView.fullSelectedImage = [UIImage imageNamed:@"shockedface2_full.png"];
+    self.rateView.editable = YES;
+    self.rateView.maxRating = 5;
+    self.rateView.delegate = self; 
+    
     if (self.detailItem) {
-        self.detailDescriptionLabel.text = [self.detailItem description];
+        self.titleField.text = self.detailItem.data.title;
+        self.rateView.rating = self.detailItem.data.rating;    
+        self.imageView.image = self.detailItem.fullImage;
     }
 }
 
@@ -53,6 +62,9 @@
 
 - (void)viewDidUnload
 {
+    [self setTitleField:nil];
+    [self setRateView:nil];
+    [self setImageView:nil];
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     self.detailDescriptionLabel = nil;
@@ -60,27 +72,50 @@
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
 {
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
-        return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-    } else {
-        return YES;
-    }
+    return YES;
 }
 
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController
-{
-    barButtonItem.title = NSLocalizedString(@"Master", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
+- (IBAction)addPictureTapped:(id)sender {
+    if (self.picker == nil) {   
+        self.picker = [[UIImagePickerController alloc] init];
+        self.picker.delegate = self;
+        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+        self.picker.allowsEditing = NO;    
+    } 
+    [self.navigationController presentModalViewController:_picker animated:YES];    
 }
 
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem
-{
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
+#pragma mark UIImagePickerControllerDelegate
+
+- (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    [self dismissModalViewControllerAnimated:YES];
 }
 
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {    
+    
+    [self dismissModalViewControllerAnimated:YES];
+    
+    UIImage *fullImage = (UIImage *) [info objectForKey:UIImagePickerControllerOriginalImage]; 
+    UIImage *thumbImage = [fullImage imageByScalingAndCroppingForSize:CGSizeMake(44, 44)];
+    self.detailItem.fullImage = fullImage;
+    self.detailItem.thumbImage = thumbImage;
+    self.imageView.image = fullImage;
+}
+
+- (IBAction)titleFieldTextChanged:(id)sender {
+    self.detailItem.data.title = self.titleField.text;
+}
+
+#pragma mark UITextFieldDelegate
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
+
+#pragma mark RateViewDelegate
+
+- (void)rateView:(RateView *)rateView ratingDidChange:(float)rating {
+    self.detailItem.data.rating = rating;
+}
 @end

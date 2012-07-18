@@ -1,17 +1,30 @@
 //
 //  DetailViewController.h
-//  rate test
+//  Scary Bosses
 //
-//  Created by iD Student on 7/12/12.
+//  Created by Daniel Wood on 7/11/12.
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+//Here//
+#import "RateView.h"
 
-@interface DetailViewController : UIViewController <UISplitViewControllerDelegate>
+//Here//
+@class ScaryBossDoc;
 
-@property (strong, nonatomic) id detailItem;
+//Here//
+@interface DetailViewController : UIViewController <UITextFieldDelegate, RateViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate>
 
+//Here//
+@property (strong, nonatomic) ScaryBossDoc *detailItem;
 @property (strong, nonatomic) IBOutlet UILabel *detailDescriptionLabel;
+@property (weak, nonatomic) IBOutlet UITextField *titleField;
+@property (weak, nonatomic) IBOutlet RateView *rateView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
+@property (strong, nonatomic) UIImagePickerController * picker;
+
+- (IBAction)addPictureTapped:(id)sender;
+- (IBAction)titleFieldChanged:(id)sender;
 
 @end
